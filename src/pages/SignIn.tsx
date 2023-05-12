@@ -6,7 +6,7 @@ import { MdOutlineLock } from 'react-icons/md'
 
 export function SignIn() {
   return (
-    <main className="mx-auto h-screen w-full max-w-screen-xl sm:flex sm:justify-center sm:items-center dark:bg-black ">
+    <main className="mx-auto w-full  h-full max-w-screen-xl sm:flex sm:justify-center sm:items-center dark:bg-black">
       <AuthForm
         formTitle="Faça login e começe a usar!"
         className="flex flex-col h-50%"
@@ -15,11 +15,11 @@ export function SignIn() {
       >
         <label htmlFor="email" className="flex flex-col">
           <Text size="lg">Endereço de email</Text>
-          <div className="flex items-center w-full gap-2 bg-[#96969c] p-2 rounded mt-1">
-            <MdOutlineEmail size={24} />
+          <div className="flex items-center w-full gap-2 bg-[#202024] p-2 rounded mt-1">
+            <MdOutlineEmail size={24} className="text-white" />
             <Input
-              type="text"
-              className="flex bg-transparent outline-none w-full h-8  placeholder:text-black"
+              type="email"
+              className="flex bg-transparent outline-none w-full h-8  placeholder:text-white text-white"
               placeholder="Digite seu email"
               id="email"
             />
@@ -27,12 +27,12 @@ export function SignIn() {
         </label>
 
         <label htmlFor="password" className="flex flex-col">
-          <Text size="lg">Endereço de email</Text>
-          <div className="flex items-center w-full gap-2 bg-[#96969c] p-2 rounded mt-1">
-            <MdOutlineLock size={24} />
+          <Text size="lg">Senha</Text>
+          <div className="flex items-center w-full gap-2 bg-[#202024] p-2 rounded mt-1">
+            <MdOutlineLock size={24} className="text-white" />
             <Input
-              type="text"
-              className="flex bg-transparent outline-none w-full h-8  placeholder:text-black"
+              type="password"
+              className="flex bg-transparent outline-none w-full h-8  placeholder:text-white text-white"
               placeholder="Digite sua senha"
               id="password"
             />
