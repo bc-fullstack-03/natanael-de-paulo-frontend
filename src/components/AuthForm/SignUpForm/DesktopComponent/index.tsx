@@ -9,12 +9,23 @@ import { Btn } from '../../../Btn'
 export function DesktopComponent() {
   return (
     <div className="flex flex-col gap-4">
-      <WrapperInput
-        icon={MdOutlinePersonOutline}
-        htmlFor="name"
-        id="name"
-        placeholder="Digite sua nome"
-      />
+      <div className="flex justify-between gap-4">
+        <WrapperInput
+          icon={MdOutlinePersonOutline}
+          htmlFor="firstName"
+          id="firstName"
+          placeholder="Nome"
+          className="w-3/5"
+        />
+
+        <WrapperInput
+          icon={MdOutlinePersonOutline}
+          htmlFor="lastName"
+          id="lastName"
+          placeholder="Sobrenome"
+          className="w-3/5"
+        />
+      </div>
 
       <WrapperInput
         icon={MdOutlineEmail}
