@@ -1,7 +1,6 @@
 import { FormHTMLAttributes, PropsWithChildren } from 'react'
 import { HeaderTitle } from '../HeaderTitle'
 import logo from '../../assets/parrotLogo.svg'
-import { Button } from '../Button'
 import clsx from 'clsx'
 import { Text } from '../Text'
 import { Link } from 'react-router-dom'
@@ -10,51 +9,47 @@ interface AuthFormProps
   extends PropsWithChildren,
     FormHTMLAttributes<HTMLFormElement> {
   formTitle: string
+  formDescription: string
   className?: string
-  submitFormButtonText: string
   linkDescription: string[]
+  routeName: string
 }
 
 export function AuthForm({
   children,
   formTitle,
+  formDescription,
   className,
-  submitFormButtonText,
-  linkDescription
+  linkDescription,
+  routeName
 }: AuthFormProps) {
   return (
-    <section className="flex flex-col w-full items-center justify-center p-2 sm:gap-32 sm:flex-row">
-      <header className="p-6 sm:max-w-2/4 sm:text-center">
-        <div className="rounded-full bg-black aspect-square flex justify-center items-center sm:w-60 sm:m-auto animate-rotate">
+    <section className="flex flex-col w-full h-full items-center justify-center p-2 lg:flex-row lg:justify-between sm:max-w-4xl">
+      <header className="max-w-2/4 mx-auto px-6 pt-6 pb-4 sm:text-center sm:flex sm:flex-col ">
+        <div className="mx-auto  bg-black aspect-square rounded-full flex justify-center items-center  animate-rotate">
           <img
             src={logo}
             alt="Logo de papagaio do site sysmap Parrot"
-            className="w-full h-4/5 animate animate-jump"
+            className="w-10/12 h-auto animate animate-jump object-cover rounded-full"
+            width={128}
+            height={128}
           />
         </div>
-
-        <HeaderTitle className="mt-6">{formTitle}</HeaderTitle>
+        <div className="overflow-hidden">
+          <Text className="block mt-6 animate-scrolling_text" size="lg">
+            {formDescription}
+          </Text>
+        </div>
       </header>
-      <div className="w-full flex flex-col items-center sm:max-w-md px-6 pt-4">
-        <form
-          className={clsx(
-            'max-w-sm w-full flex flex-col gap-2 sm:flex animate-form',
-            className
-          )}
-        >
+      <div className="mx-auto w-full flex flex-col items-center max-w-md px-6 mt-2">
+        <HeaderTitle>{formTitle}</HeaderTitle>
+        <form className={clsx('max-w-sm w-full flex flex-col mt-4', className)}>
           {children}
-          <Button
-            type="submit"
-            className="w-56 mt-4 max-w-full p-3 mx-auto bg-[#81D8F7] rounded hover:brightness-75"
-          >
-            {submitFormButtonText}
-          </Button>
         </form>
-
         <footer className="mt-2">
           <Text size="sm" className="text-gray-400">
             {linkDescription[0]}{' '}
-            <Link to="" className="underline">
+            <Link to={routeName} className="underline">
               {linkDescription.slice(1)}!
             </Link>
           </Text>
@@ -62,15 +57,4 @@ export function AuthForm({
       </div>
     </section>
   )
-}
-
-{
-  /* <footer className="mt-2">
-          <Text size="sm" className="text-gray-400">
-            {linkDescription[0]}{' '}
-            <Link to={routeName} className="underline">
-              {linkDescription.slice(1)}!
-            </Link>
-          </Text>
-        </footer> */
 }

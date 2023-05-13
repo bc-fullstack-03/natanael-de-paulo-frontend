@@ -8,7 +8,12 @@ interface TextProps extends PropsWithChildren {
   className?: string
 }
 
-export function Text({ size = 'md', children, asChild, className }: TextProps) {
+export function Text({
+  size = 'md',
+  children,
+  asChild = false,
+  className
+}: TextProps) {
   const Comp = asChild ? Slot : 'span'
 
   return (

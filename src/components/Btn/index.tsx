@@ -9,12 +9,7 @@ interface ButtonProps
   className?: string
 }
 
-export function Button({
-  children,
-  asChild,
-  className,
-  ...props
-}: ButtonProps) {
+export function Btn({ children, asChild, className, ...props }: ButtonProps) {
   const Comp = asChild ? Slot : 'button'
 
   return (
