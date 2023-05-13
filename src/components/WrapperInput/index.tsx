@@ -5,7 +5,7 @@ interface InputProps {
   className?: string
   htmlFor?: string
   icon?: any
-  typeInput?: string
+  typeInput: string
   placeholder: string
   id: string
 }
@@ -20,9 +20,11 @@ export function WrapperInput(props: PropsWithChildren<InputProps>) {
           props.className
         )}
       >
-        {<props.icon size={24} className="text-white" />}
+        {props.icon && <props.icon size={24} className="text-white" />}
 
-        <div className="h-full w-[1px] bg-white text-white"></div>
+        {props.icon && (
+          <div className="h-full w-[1px] bg-white text-white"></div>
+        )}
 
         <input
           type={props.typeInput}

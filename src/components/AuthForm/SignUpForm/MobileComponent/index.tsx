@@ -19,6 +19,7 @@ export function MobileComponent({ step, nextStep, returnStep }: ModibeProps) {
         <WrapperInput
           icon={MdOutlineEmail}
           htmlFor="email"
+          typeInput="email"
           id="email"
           placeholder="Digite seu email"
         />
@@ -28,6 +29,7 @@ export function MobileComponent({ step, nextStep, returnStep }: ModibeProps) {
         <WrapperInput
           icon={MdOutlineLock}
           htmlFor="password"
+          typeInput="password"
           id="password"
           placeholder="Digite sua senha"
         />
@@ -35,8 +37,9 @@ export function MobileComponent({ step, nextStep, returnStep }: ModibeProps) {
 
       {step === 2 && (
         <WrapperInput
-          icon={MdOutlineLock}
+          icon={MdOutlinePersonOutline}
           htmlFor="name"
+          typeInput="text"
           id="name"
           placeholder="Digite sua nome"
         />

@@ -13,6 +13,7 @@ export function DesktopComponent() {
         <WrapperInput
           icon={MdOutlinePersonOutline}
           htmlFor="firstName"
+          typeInput="text"
           id="firstName"
           placeholder="Nome"
           className="w-3/5"
@@ -21,6 +22,7 @@ export function DesktopComponent() {
         <WrapperInput
           icon={MdOutlinePersonOutline}
           htmlFor="lastName"
+          typeInput="text"
           id="lastName"
           placeholder="Sobrenome"
           className="w-3/5"
@@ -30,6 +32,7 @@ export function DesktopComponent() {
       <WrapperInput
         icon={MdOutlineEmail}
         htmlFor="email"
+        typeInput="email"
         id="email"
         placeholder="Digite seu email"
       />
@@ -37,6 +40,7 @@ export function DesktopComponent() {
       <WrapperInput
         icon={MdOutlineLock}
         htmlFor="password"
+        typeInput="password"
         id="password"
         placeholder="Digite sua senha"
       />

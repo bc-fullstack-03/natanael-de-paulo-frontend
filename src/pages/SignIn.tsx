@@ -18,6 +18,7 @@ export function SignIn() {
           <WrapperInput
             icon={MdOutlineEmail}
             htmlFor="email"
+            typeInput="email"
             id="email"
             placeholder="Digite seu email"
           />
@@ -27,6 +28,7 @@ export function SignIn() {
           <WrapperInput
             icon={MdOutlineLock}
             htmlFor="password"
+            typeInput="password"
             id="password"
             placeholder="Digite sua senha"
           />
