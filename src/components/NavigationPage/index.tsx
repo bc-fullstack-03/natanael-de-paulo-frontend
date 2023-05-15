@@ -8,7 +8,7 @@ interface NavigationProps {
 export function NavigationPage({ isSmallScreen }: NavigationProps) {
   return (
     <>
-      <nav className="bg-white sm:rounded-xl sm:p-4">
+      <nav className="bg-white sm:rounded-xl sm:p-4 sm:sticky sm:top-28">
         {isSmallScreen ? <NavMobile /> : <NavDesktop />}
       </nav>
     </>

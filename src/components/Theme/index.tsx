@@ -22,9 +22,9 @@ export function Theme({ children }: PropsWithChildren) {
 
   return (
     <div className="flex relative mx-auto sm:max-w-screen-2xl w-full sm:gap-4 sm:px-4 scroll-m-0 overscroll-y-none">
-      <aside className="fixed bottom-0 z-10 w-full sm:relative sm:flex sm:w-full sm:max-w-[25%] sm:flex-col sm:px-2 sm:gap-8 ">
+      <aside className="fixed bottom-0 z-10 w-full sm:relative sm:flex sm:w-full sm:max-w-[25%] sm:flex-col sm:px-2 sm:gap-8">
         {isSmallScreen ? null : (
-          <div className="flex items-center bg-white rounded-xl py-4">
+          <div className="flex items-center bg-white rounded-xl py-4 sm:sticky sm:top-0">
             <img
               src={logo}
               alt="Imagem de papagaio sysmap"
