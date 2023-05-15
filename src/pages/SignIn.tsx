@@ -1,8 +1,7 @@
 import { AuthForm } from '../components/AuthForm'
 import { Btn } from '../components/Btn'
 import { WrapperInput } from '../components/WrapperInput'
-import { MdOutlineEmail } from 'react-icons/md'
-import { MdOutlineLock } from 'react-icons/md'
+import { MdOutlineEmail, MdOutlineLock } from 'react-icons/md'
 
 export function SignIn() {
   return (

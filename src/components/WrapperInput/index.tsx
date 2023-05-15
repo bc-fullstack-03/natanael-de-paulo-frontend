@@ -1,10 +1,11 @@
 import clsx from 'clsx'
 import { PropsWithChildren } from 'react'
+import { IconType } from 'react-icons'
 
 interface InputProps {
   className?: string
   htmlFor?: string
-  icon?: any
+  icon?: IconType
   typeInput: string
   placeholder: string
   id: string
