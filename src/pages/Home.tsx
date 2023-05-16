@@ -6,11 +6,11 @@ export function Home() {
   return (
     <>
       <Theme>
-        <header className="w-full p-2 bg-white ">
+        <header className="w-full p-2 bg-white">
           <HeaderTitle>Pagina inicial</HeaderTitle>
         </header>
 
-        <div className="flex flex-col w-full gap-4">
+        <div className="flex flex-col w-full gap-4 p-4">
           <div className="p-4">modal</div>
 
           <div className="border-b border-solid border-slate-400"></div>
