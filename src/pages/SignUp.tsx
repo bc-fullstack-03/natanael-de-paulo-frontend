@@ -38,9 +38,7 @@ export function SignUp() {
       await api.post('/security/register', {
         user: data.email,
         password: data.password,
-        profile: {
-          name: data.profile.firstName + ' ' + data.profile.lastName
-        }
+        name: data.profile.firstName + ' ' + data.profile.lastName
       })
       navigate('/')
     } catch (error) {
@@ -49,16 +47,21 @@ export function SignUp() {
     }
   }
 
-  const nextStep = () => {
-    setStep(step + 1)
-  }
-
-  const returnStep = () => {
-    setStep(step - 1)
+  const commandStep = {
+    nextStep() {
+      setStep(step + 1)
+    },
+    returnStep() {
+      setStep(step - 1)
+    }
   }
 
   const Comp = isSmallScreen ? (
-    <MobileComponent nextStep={nextStep} returnStep={returnStep} step={step} />
+    <MobileComponent
+      nextStep={commandStep.nextStep}
+      returnStep={commandStep.returnStep}
+      step={step}
+    />
   ) : (
     <DesktopComponent />
   )

@@ -5,7 +5,7 @@ import img from '../../assets/1655240397925.jpg'
 export function Post() {
   return (
     <>
-      <div className="flex flex-col bg-white rounded-md border-slate-400 p-4 sm:max-w-lg sm:mx-auto sm:w-full">
+      <div className="flex flex-col bg-white rounded-md border-slate-400 p-4 sm:w-full sm:mx-auto">
         <div className="flex items-center gap-3">
           <div className="rounded-[50%] p-2 bg-teal-200  overflow-hidden">
             <AiOutlineUser size={24} className="text-slate-50" />
@@ -24,13 +24,13 @@ export function Post() {
           </Text>
         </div>
 
-        <div className="h-auto mx-auto my-4">
+        <div className="flex h-auto my-4">
           <img
             src={img}
             alt="imagem"
-            className=" flex rounded "
+            className=" flex rounded aspect-square w-full object-contain"
             width={216}
-            height={325}
+            height={275}
           />
         </div>
 

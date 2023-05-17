@@ -1,13 +1,11 @@
 import { PropsWithChildren, useEffect, useState } from 'react'
-import { NavigationPage } from '../NavigationPage'
+import { Navigation } from '../Navigation'
 import logo from '../../assets/parrotLogo.svg'
 import { Text } from '../Text'
 
 // interface ThemeProps {}
 export function Theme({ children }: PropsWithChildren) {
-  const [isSmallScreen, setIsSmallScreen] = useState<boolean>(
-    window.innerWidth < 768
-  )
+  const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false)
 
   useEffect(() => {
     function handleResize() {
@@ -21,10 +19,10 @@ export function Theme({ children }: PropsWithChildren) {
   }, [])
 
   return (
-    <div className="flex relative mx-auto sm:max-w-screen-lg w-full sm:gap-4 sm:px-4">
+    <div className="flex relative mx-auto sm:max-w-screen-xl w-full sm:gap-4 sm:px-4 ">
       <aside className="fixed bottom-0 z-10 w-full sm:relative sm:flex sm:w-full sm:max-w-[25%] sm:flex-col sm:px-2 sm:gap-8">
         {isSmallScreen ? null : (
-          <div className="flex items-center bg-white rounded-xl py-4 sm:sticky sm:top-0">
+          <div className="flex items-center bg-white rounded-b-md h-auto p-1 sm:sticky sm:top-0">
             <img
               src={logo}
               alt="Imagem de papagaio sysmap"
@@ -39,9 +37,16 @@ export function Theme({ children }: PropsWithChildren) {
             </Text>
           </div>
         )}
-        <NavigationPage isSmallScreen={isSmallScreen} />
+        <Navigation />
       </aside>
-      <main className="flex w-full flex-col gap-4 sm:w-11/12">{children}</main>
+      <main className="flex w-full flex-col gap-4 sm:max-w-xl ">
+        {children}
+      </main>
+      {isSmallScreen ? null : (
+        <div className="bg-white w-full sm:max-w-[20%] relative">
+          <div className="sticky top-12">aisdjasds</div>
+        </div>
+      )}
     </div>
   )
 }
