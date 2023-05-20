@@ -27,7 +27,7 @@ export function SignIn() {
           <WrapperInput
             icon={MdOutlineEmail}
             htmlFor="email"
-            typeInput="email"
+            typeInput="text"
             id="email"
             placeholder="Digite seu email"
           />

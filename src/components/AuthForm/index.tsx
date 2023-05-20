@@ -44,8 +44,6 @@ export function AuthForm({
   const handleSubmit = (event: FormEvent<FormElement>) => {
     event.preventDefault()
     const form = event.currentTarget
-    console.log(form.elements)
-
     const { firstName, lastName, email, password } = form.elements
 
     if (typeSubmit == 'login') {
@@ -53,7 +51,6 @@ export function AuthForm({
         email: email.value,
         password: password.value
       } as LoginUserProps
-
       submitFormButtonAction(loginData)
     }
     if (typeSubmit == 'signup') {

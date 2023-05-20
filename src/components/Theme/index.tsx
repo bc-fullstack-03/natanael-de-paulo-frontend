@@ -3,7 +3,6 @@ import { Navigation } from '../Navigation'
 import logo from '../../assets/parrotLogo.svg'
 import { Text } from '../Text'
 
-// interface ThemeProps {}
 export function Theme({ children }: PropsWithChildren) {
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false)
 
@@ -13,14 +12,12 @@ export function Theme({ children }: PropsWithChildren) {
     }
 
     window.addEventListener('resize', handleResize)
-
-    // Limpar o evento ao desmontar o componente
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
   return (
     <div className="flex relative mx-auto sm:max-w-screen-xl w-full sm:gap-4 sm:px-4 ">
-      <aside className="fixed bottom-0 z-10 w-full sm:relative sm:flex sm:w-full sm:max-w-[25%] sm:flex-col sm:px-2 sm:gap-8">
+      <aside className="fixed bottom-0 z-5 w-full sm:relative sm:flex sm:w-full sm:max-w-[25%] sm:flex-col sm:px-2 sm:gap-8">
         {isSmallScreen ? null : (
           <div className="flex items-center bg-white rounded-b-md h-auto p-1 sm:sticky sm:top-0">
             <img
@@ -42,11 +39,6 @@ export function Theme({ children }: PropsWithChildren) {
       <main className="flex w-full flex-col gap-4 sm:max-w-xl ">
         {children}
       </main>
-      {isSmallScreen ? null : (
-        <div className="bg-white w-full sm:max-w-[20%] relative">
-          <div className="sticky top-12">aisdjasds</div>
-        </div>
-      )}
     </div>
   )
 }
