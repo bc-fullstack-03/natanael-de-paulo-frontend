@@ -3,13 +3,26 @@ import { AiOutlineComment, AiOutlineHeart, AiOutlineUser } from 'react-icons/ai'
 // import img from '../../assets/1655240397925.jpg'
 import { PostProps } from '../../models/Post'
 import { formatDate } from '../../utils/formatData'
+import { likePost, unlikePost } from '../../services/api'
 
 interface IPostProps {
   post: PostProps
-  handleLike: (post_id: string) => Promise<void>
+  refreshListPost: () => Promise<void>
 }
 
-export function Post({ post, handleLike }: IPostProps) {
+export function Post({ post, refreshListPost }: IPostProps) {
+  const profileId = localStorage.getItem('profile_id') as string
+
+  const idExistToPost = post.likes.includes(profileId)
+  console.log(idExistToPost)
+
+  const handleLike = async (post_id: string) => {
+    idExistToPost
+      ? await unlikePost(post_id)
+      : await likePost(post_id).then(e => console.log(e))
+    refreshListPost()
+  }
+
   return (
     <>
       <div className="flex flex-col bg-white rounded-md border-slate-400 p-4 sm:w-full sm:mx-auto">
@@ -27,10 +40,7 @@ export function Post({ post, handleLike }: IPostProps) {
           {post.image ? (
             <div className="flex h-auto my-4">
               <img
-                src={post.description.replace(
-                  'undefined',
-                  'http://localhost:9000/'
-                )}
+                src={post.description}
                 alt="imagem"
                 className="flex rounded aspect-square w-full object-contain"
                 width={216}
