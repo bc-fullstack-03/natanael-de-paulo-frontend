@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { MdOutlinePersonOutline } from 'react-icons/md'
@@ -51,6 +52,7 @@ export function Feed() {
       {posts &&
         posts.map(post => (
           <Post post={post} key={post._id} refreshListPost={refreshListPost} />
+
         ))}
     </>
   )

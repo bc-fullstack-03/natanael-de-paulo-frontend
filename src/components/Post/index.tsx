@@ -3,6 +3,7 @@ import { AiOutlineComment, AiOutlineHeart, AiOutlineUser } from 'react-icons/ai'
 // import img from '../../assets/1655240397925.jpg'
 import { PostProps } from '../../models/Post'
 import { formatDate } from '../../utils/formatData'
+
 import { likePost, unlikePost } from '../../services/api'
 
 interface IPostProps {

@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import { AuthHeader } from "./AuthHeader";
 
 export const api = axios.create({
@@ -22,3 +23,4 @@ export async function unlikePost(postId: string){
     alert("Erro ao descurtir post");
   }
 }
+
