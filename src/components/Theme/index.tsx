@@ -36,7 +36,7 @@ export function Theme({ children }: PropsWithChildren) {
         )}
         <Navigation />
       </aside>
-      <main className="flex w-full flex-col gap-4 sm:max-w-xl ">
+      <main className="flex w-full flex-col gap-4 pb-8 sm:max-w-xl ">
         {children}
       </main>
     </div>

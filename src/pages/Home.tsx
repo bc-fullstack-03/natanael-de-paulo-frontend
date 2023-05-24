@@ -56,28 +56,8 @@ export function Home() {
         <header className="w-full h-auto p-3.5 rounded-b-md bg-white">
           <HeaderTitle>Pagina inicial</HeaderTitle>
         </header>
-
-        <div className="flex w-full px-4 sm:px-0 mt-6 ">
-          <div className="flex w-full items-center bg-white rounded-md border border-slate-200 gap-4 p-2 pl-4 sm:justify-center">
-            <div className="flex items-center my-2">
-              <MdOutlinePersonOutline size={24} className="text-black" />
-            </div>
-            <Dialog.Root open={open} onOpenChange={setOpen}>
-              <CreatePostBtn user={user} />
-              <CreatePostDialog
-                closeDialog={closeDialog}
-                user={user}
-                setOpen={setOpen}
-                open={open}
-                refreshListPost={refreshListPost}
-              />
-            </Dialog.Root>
-          </div>
-        </div>
-
-        <div className="border-b border-solid border-slate-400"></div>
-
-        <Feed posts={posts} user={user} handleLike={handleLike} />
+        
+        <Feed />
       </Theme>
     </>
   )

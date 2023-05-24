@@ -25,7 +25,7 @@ type AuthProviderProps = {
 }
 
 type Token = {
-  sub: string
+  _id: string
   user: string
   profile: string
 }
@@ -64,13 +64,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
       const decodedToken = jwtDecode(data.accessToken) as Token
 
       const userData = {
-        user_id: decodedToken.sub,
+        user_id: decodedToken._id,
         user_email: decodedToken.user,
         profile_id: decodedToken.profile,
         token: data.accessToken
       } as DecodeTokenProps
 
-      localStorage.setItem('userData', JSON.stringify(userData))
+      localStorage.setItem('profile_id', userData.profile_id)
+      localStorage.setItem('user_id', userData.user_id)
       localStorage.setItem('token', userData.token)
 
       setIsAuthenticated(true)
